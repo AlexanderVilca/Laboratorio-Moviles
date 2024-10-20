@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textNombreCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Cliente" />
+
+    <TextView
+        android:id="@+id/textNumeroCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Número Cliente" />
+
+    <TextView
+        android:id="@+id/textProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Productos" />
+
+    <TextView
+        android:id="@+id/textDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dirección" />
+
+    <Button
+        android:id="@+id/btnLlamar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LLAMAR" />
+
+    <Button
+        android:id="@+id/btnWhatsApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WSP" />
+
+    <Button
+        android:id="@+id/btnMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MAPS" />
+
+</LinearLayout>
