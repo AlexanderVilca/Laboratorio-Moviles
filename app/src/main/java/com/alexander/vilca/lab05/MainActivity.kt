@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityMainBinding
 
-    // Claves para los parámetros que se van a pasar a la segunda actividad
     val PARAMETER_EXTRA_NOMBRE = "nombre"
     val PARAMETER_EXTRA_NUMERO = "numero"
     val PARAMETER_EXTRA_PRODUCTOS = "productos"
@@ -40,11 +39,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Función para validar que los campos no estén vacíos
     private fun validateInput(vararg inputs: String): Boolean {
         for (input in inputs) {
             if (input.isEmpty()) {
-                // Mostrar un mensaje de error con Snackbar
                 Snackbar.make(viewBinding.root, "Por favor, completa todos los campos.", Snackbar.LENGTH_LONG).show()
                 return false
             }

@@ -21,7 +21,6 @@ class ContactActivity : AppCompatActivity() {
         viewBinding = ActivityContactBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        // Obtener los extras del intent
         val extras = intent.extras
         if (extras != null) {
             extras.getString(PARAMETER_EXTRA_NOMBRE)?.let {
@@ -38,7 +37,6 @@ class ContactActivity : AppCompatActivity() {
             }
         }
 
-        // Botón para realizar llamada
         viewBinding.btnLlamar.setOnClickListener {
             val telefono = viewBinding.textNumeroCliente.text.toString()
             if (validateInput(telefono)) {
@@ -46,7 +44,6 @@ class ContactActivity : AppCompatActivity() {
             }
         }
 
-        // Botón para abrir WhatsApp con un mensaje personalizado
         viewBinding.btnWhatsApp.setOnClickListener {
             val telefono = viewBinding.textNumeroCliente.text.toString()
             val nombre = viewBinding.textNombreCliente.text.toString()
@@ -58,7 +55,6 @@ class ContactActivity : AppCompatActivity() {
             }
         }
 
-        // Botón para abrir Google Maps con la ubicación (dirección)
         viewBinding.btnMaps.setOnClickListener {
             val direccion = viewBinding.textDireccion.text.toString()
             if (validateInput(direccion)) {
@@ -67,7 +63,6 @@ class ContactActivity : AppCompatActivity() {
         }
     }
 
-    // Función para validar que los inputs no estén vacíos
     private fun validateInput(vararg inputs: String): Boolean {
         for (input in inputs) {
             if (input.isEmpty()) {
@@ -79,14 +74,12 @@ class ContactActivity : AppCompatActivity() {
         return true
     }
 
-    // Función para realizar una llamada
     private fun Call(telefono: String) {
         val intent = Intent(Intent.ACTION_DIAL)
         intent.data = Uri.parse("tel:$telefono")
         startActivity(intent)
     }
 
-    // Función para abrir WhatsApp con un mensaje personalizado
     private fun WhatsApp(telefono: String, nombre: String, productos: String, direccion: String) {
         try {
             val mensaje = "Hola $nombre, tus productos: $productos están en camino a la dirección: $direccion"
@@ -98,7 +91,6 @@ class ContactActivity : AppCompatActivity() {
         }
     }
 
-    // Función para abrir Google Maps con la dirección del cliente
     private fun openMaps(direccion: String) {
         val uri = Uri.parse("geo:0,0?q=${Uri.encode(direccion)}")
         val intent = Intent(Intent.ACTION_VIEW, uri)
